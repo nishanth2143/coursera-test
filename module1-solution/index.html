@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Lunch Checker</title>
+  </head>
+
+  <body ng-app='LunchCheck'>
+    <div class="container">
+    <h1>Lunch Checker</h1>
+    <p>Do NOT consider an empty item, i.e. , , as an item towards to the count</p>
+    <div ng-controller = 'LunchCheckController'>
+        <div class= "form-group" >
+          <input type="text"
+                  style="border-color:{{color}}"
+                  class="form-control"
+                  placeholder={{placeholder}}
+                  ng-model="lunch"/>
+        </div>
+        <div class="form-group">
+          <button class = "btn btn-default" ng-click="DisplayTextOnClick()">{{buttonText}}</button>
+        </div>
+        <div class="form-group message" style="color:{{color}}">
+          {{message}}
+        </div>
+    </div>
+  </div>
+  </body>
+</html>
