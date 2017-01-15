@@ -54,21 +54,14 @@
        }
      ];
       var bought = [];
-      var error = true;
       service.getToBuyItems = function(){
         return tobuy;
       };
 
       service.addItem = function(itemIndex){
-        debugger;
-
           var item = tobuy.slice(itemIndex,itemIndex+1);
           tobuy.splice(itemIndex, 1);
-          bought.push(item[0]);
-          if(bought.length != 0)
-          {
-            error = false;
-          }
+          bought.push(item[0]);        
           if(tobuy.length ==0)
           {
             throw new Error("Everything is bought!");
