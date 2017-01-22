@@ -41,7 +41,6 @@
 
         MenuSearchService.getMatchedMenuItems(narrowDown.searchTerm).then(function(value)
         {
-          debugger;
             narrowDown.items = value;
             if(narrowDown.items.length == 0)
             {
@@ -71,7 +70,6 @@
     var foundItems = [];
 
     service.getMatchedMenuItems = function(searchTerm){
-      debugger;
       return $http.get(ApiBasePath + "/menu_items.json").then(function(result){
           if(searchTerm == "")
           {
