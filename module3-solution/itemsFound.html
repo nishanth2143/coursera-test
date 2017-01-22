@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th class="col-md-3">{{narrowDown.name}}</th>
+    <th class="col-md-3">{{narrowDown.shortname}}</th>
+    <th class="col-md-3">{{narrowDown.description}}</th>
+  </tr>
+  <tr ng-repeat="item in narrowDown.items">
+    <td class="col-md-3">{{ item.name }}</td>
+    <td class="col-md-3">{{ item.short_name }}</td>
+    <td class="col-md-3">{{ item.description }}</td>
+    <td class="col-md-3"><button type="button" ng-click="narrowDown.removeItem({index: $indexOf})">Don't want this one!.</td>
+  </tr>
+</table>
+
+<div class="col-md-12">{{narrowDown.message}}</div>
