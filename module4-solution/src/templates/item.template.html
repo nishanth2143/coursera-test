@@ -1,0 +1,16 @@
+
+<h3><span ng-bind="$ctrl.item.category.name"></span></h3>
+<table class="col-md-12">
+  <tr>
+    <th class="col-md-3">Name</th>
+    <th class="col-md-5">Description</th>
+    <th class="col-md-2">Price Small</th>
+    <th class="col-md-2">Price Large</th>
+  </tr>
+  <tr ng-repeat = "singleValue in $ctrl.item.menu_items">
+    <td class="col-md-3">{{ singleValue.name }}</td>
+    <td class="col-md-5">{{ singleValue.description }}</td>
+    <td class="col-md-2">{{ singleValue.price_large }}</td>
+    <td class="col-md-2">{{ singleValue.price_small }}</td>
+  </tr>
+</table>
