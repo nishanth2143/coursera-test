@@ -1,0 +1,92 @@
+<!-- <h3>Enter the details:</h3> -->
+<div class="container">
+      <h2 class="font-color-choc col-md-offset-4 underline">Registration</h2>
+      <form name='regForm' novalidate>
+        <div class="row col-md-offset-3">
+          <div class="col-md-12">
+              <div class="col-md-3">First Name:
+              </div>
+              <div class="col-md-9"><input type="text" name="firstname" placeholder="First Name"
+                ng-model="signUpCtrl.user.firstname" class="font-color "required>
+                <span ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
+                  First Name is required.
+                </span>
+              </div>
+            </div>
+          <!-- <span ng-if="regForm.username.$error.maxlength && regForm.username.$touched">
+            Username must not be longer than 10 characters
+          </span> -->
+          <br>
+          <br>
+
+          <div class="col-md-12">
+              <div class="col-md-3">Last Name:
+              </div>
+              <div class="col-md-9"><input type="text" name="lastname" placeholder="Last Name"
+                ng-model="signUpCtrl.user.lastname" class="font-color" required>
+                <span ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
+                  Last Name is required.
+                </span>
+              </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="col-md-12">
+              <div class="col-md-3">Email Address:
+              </div>
+              <div class="col-md-9"><input type="email" name="email" placeholder="Email"
+                ng-model="signUpCtrl.user.email" class="font-color" required>
+                <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+                  Must be a valid email address: handle@domain format
+                </span>
+              </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="col-md-12">
+              <div class="col-md-3">Phone No.:
+              </div>
+              <div class="col-md-9"><input type="text" name="phone" placeholder="Phone ###-###-####"
+                ng-model="signUpCtrl.user.phone" class="font-color" pattern="(\d{3})-(\d{3})-(\d{4})">
+                <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+                  Phone must be in the format ###-###-####.
+                </span>
+              </div>
+          </div>
+          <br>
+          <br>
+
+          <div class="col-md-12">
+              <div class="col-md-3">Menu Number of Your Fav Dish:
+              </div>
+              <div class="col-md-9"><input type="text" name="shortname" class="font-color" placeholder="Menu Number"
+                ng-model="signUpCtrl.user.shortname" ng-blur="signUpCtrl.CheckIfExists()">
+                <span ng-if="signUpCtrl.menuNotExists">
+                  No such menu number exists
+                </span>
+              </div>
+          </div>
+          <br>
+          <br>
+
+        <button class="col-md-offset-3"
+          ng-class="{'font-color':regForm.$valid && !signUpCtrl.menuNotExists }"
+          ng-disabled="regForm.$invalid || signUpCtrl.menuNotExists"
+          ng-click="signUpCtrl.submit()">Submit</button>
+
+        </div>
+        <br>
+        <br>
+
+        <span ng-if="signUpCtrl.success" ng-class="{'col-md-offset-5': signUpCtrl.success, 'success-color': signUpCtrl.success}">
+          Your information has been saved
+        </span>
+          <!-- <div style="margin-top: 10px;">
+            Form valid? {{ regForm.$valid }}
+          </div> -->
+      </form>
+    </div>

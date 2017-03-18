@@ -1,0 +1,59 @@
+<div class="container" ng-if="myInfoCtrl.showDetails">
+  <div class="row col-md-12">
+    <div class="col-md-2">
+      First Name:
+    </div>
+    <div class="col-md-10">
+      {{ myInfoCtrl.user.firstname }}
+    </div>
+  </div>
+
+  <div class="row col-md-12">
+    <div class="col-md-2">
+      Last Name:
+    </div>
+    <div class="col-md-10">
+      {{ myInfoCtrl.user.lastname }}
+    </div>
+  </div>
+
+  <div class="row col-md-12">
+    <div class="col-md-2">
+      Email Address:
+    </div>
+    <div class="col-md-10">
+      {{ myInfoCtrl.user.email }}
+    </div>
+  </div>
+
+  <div class="row col-md-12" ng-if="myInfoCtrl.user.phone!=undefined">
+    <div class="col-md-2">
+      Phone No.:
+    </div>
+    <div class="col-md-10">
+      {{ myInfoCtrl.user.phone }}
+    </div>
+  </div>
+
+  <div class="row col-md-12" ng-if="myInfoCtrl.user.shortname!=undefined">
+    <div class="col-md-2">
+      Fav Dish Description:
+    </div>
+    <div class="col-md-5">
+      {{ myInfoCtrl.user.itemDescription }}
+
+      <a ui-sref="public.menuitems({category: myInfoCtrl.user.short})">
+        <div class="category-tile">
+          <img width="200" height="200" ng-src="images/menu/{{myInfoCtrl.user.short}}/{{myInfoCtrl.user.short}}.jpg" alt="{{myInfoCtrl.user.short}}">
+          <span>{{myInfoCtrl.user.itemName}}</span>
+        </div>
+      </a>
+
+
+
+    </div>
+  </div>
+
+</div>
+
+<h4 ng-if="myInfoCtrl.showSignUp">NOT SIGNED UP YET. <a ui-sref='public.signUp'>SIGN UP NOW!.</a> </h4>
